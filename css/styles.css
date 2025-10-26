@@ -874,5 +874,181 @@ margin-bottom: 8px;
 .modal-submit:focus {
     background-color: #404bbf;
 }
+/* =============== Base / Mobile First (>=320px) =============== */
 
+/* Контейнер */
+.container {
+    max-width: 320px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Картки команди: одна колонка на мобілці */
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 24px;
+    column-gap: 24px;
+    /* по замовчуванню всі йдуть в 1 колонку */
+}
+
+.team-card {
+    flex-basis: 100%;
+}
+
+/* Портфоліо: одна карточка в рядок на мобілці */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 24px;
+    column-gap: 24px;
+}
+
+.project-card {
+    flex-basis: 100%;
+}
+
+/* Футер мобілка: все йде стовпчиком */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    /* column-gap не потрібен тут */
+    text-align: center;
+}
+
+.footer-left,
+.footer-socials,
+.footer-form {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Картинки не вилазять за екран */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Заборона горизонтального скролу */
+body {
+    overflow-x: hidden;
+}
+/* =============== Tablet (>=768px) =============== */
+@media screen and (min-width: 768px) {
+
+    /* Контейнер стає ширшим */
+    .container {
+        max-width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    /* TEAM: 2 колонки замість 1 */
+    .team-card {
+        flex-basis: calc((100% - 24px) / 2);
+        /* 2 колонки з проміжком 24px */
+    }
+
+    .team-list {
+        row-gap: 24px;
+        column-gap: 24px;
+        justify-content: center;
+    }
+
+    /* PORTFOLIO: 2 колонки на планшеті */
+    .project-card {
+        flex-basis: calc((100% - 24px) / 2);
+        /* так само як team */
+    }
+
+    .project-list {
+        row-gap: 24px;
+        column-gap: 24px;
+    }
+
+    /* FOOTER: футер в 2 колонки */
+    .footer-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        row-gap: 24px;
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .footer-left {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+
+    .footer-socials {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+
+    .footer-form {
+        flex-basis: 100%;
+        max-width: 400px;
+    }
+
+}
+/* =============== Desktop (>=1158px) =============== */
+@media screen and (min-width: 1158px) {
+
+    /* Контейнер береться з макету WebStudio 5.0 */
+    .container {
+        max-width: 1158px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* TEAM: 4 колонки на десктопі */
+    .team-card {
+        flex-basis: calc((100% - 72px) / 4);
+        /* 4 колонки = 3 проміжки * 24px = 72px */
+    }
+
+    .team-list {
+        column-gap: 24px;
+        row-gap: 24px;
+    }
+
+    /* PORTFOLIO: 3 колонки у десктопі (дивлюсь на твою Figma — там йде сітка 3 в ряд) */
+    .project-card {
+        flex-basis: calc((100% - 48px) / 3);
+        /* 3 колонки = 2 проміжки * 24px = 48px */
+    }
+
+    .project-list {
+        column-gap: 24px;
+        row-gap: 24px;
+    }
+
+    /* FOOTER: в один ряд з трьох блоків */
+    .footer-container {
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        column-gap: 40px;
+    }
+
+    .footer-left {
+        flex-basis: auto;
+        max-width: 264px;
+    }
+
+    .footer-socials {
+        flex-basis: auto;
+        max-width: 208px;
+    }
+
+    .footer-form {
+        flex-basis: auto;
+        max-width: 360px;
+        margin-left: auto;
+        /* щоб форма пішла вправо */
+    }
+}
 
