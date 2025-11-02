@@ -139,6 +139,20 @@ gap: 40px;
  padding: 24px 0;
   margin-right: 120px;
 }
+.menu-link {
+    display: block;
+    padding: 24px 0;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2e2f42;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
  .nav-link.current {
  position: relative;
@@ -171,21 +185,25 @@ display: wrap;
     justify-content: space-between;
 }
 .contacts-list {
-    display: wrap;
-    flex-direction: row;
-    gap: 12px;
+display: wrap;
+    gap: 40px;
+    align-items: center;
+    flex-direction: flex;
+    
     
 }
 
 .contacts-link {
+font-weight: 400;
     font-size: 12px;
-    margin-bottom: 12px;
     line-height: 1.17;
-    color: #434455;
     letter-spacing: 0.04em;
     text-decoration: none;
+    padding: 12px 0;
     display: block;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    align-items: left;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .nav-link:hover,
@@ -427,8 +445,6 @@ background-image:
         padding: 188px 0;
         background-image:
             linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url(../images/mob/bg.jpg 1x,
-            ../images/mob/bg@2x.jpg );
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -568,17 +584,15 @@ display: flex;
 /* ===== Features ( 2 сeкція)===== */
 
 .features {
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-direction: column;
-    }
+            padding: 120px 0;
+            overflow: hidden;
+        }
 
 .features-list {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0 24px 72px 0;
-flex-wrap: wrap;
+   flex-wrap: wrap;
 }
 
 .features-item {
@@ -592,9 +606,8 @@ flex-wrap: wrap;
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: 0.02em;
-    margin-bottom: 8px;
-    margin-top: 96px;
     text-align: center;
+    padding: 96px 16px 8px;
 }
 .features-text {
     color: #434455;
@@ -603,7 +616,7 @@ flex-wrap: wrap;
     line-height: 1.5;
     letter-spacing: 0.02em;
     text-align: left;
-    margin-bottom: 72px;
+   
 }
 .features-icon {
     display: none;
@@ -613,22 +626,26 @@ flex-wrap: wrap;
 
 
 @media screen and (min-width: 768px) {
+.features {
+        padding: 120px 0;
+        overflow: hidden;
+    }
+
 .features-item {
     flex-basis: calc((100% - 72px) / 2);
 }
+
+
 .features-title {
-margin-bottom: 8px;
-margin-top: 96px;
+padding: 96px 116px 8px 16px;
     text-align: left;
 }
+
 .features-text {
     color: #434455;
     font-weight: 500;
     text-align: left;
-    margin-top: 8px;
-    margin-bottom: 72px;
-    margin-right: 24px;
-    padding: 0 16px;
+    padding: 8px 16px 72px;
     
 }
 
@@ -743,7 +760,6 @@ flex-basis: calc((100% - 72px) / 2);
 box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
 0 1px 1px 0 rgba(46, 47, 66, 0.16),
 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-padding: 0 0 32px;
 width: 264px;
 flex-direction: column;
     gap: 32px;
@@ -786,20 +802,63 @@ font-weight: 500;
 
 
 @media screen and (min-width: 768px) {
-    .team-container {
+.team-container {
         color: #f4f4fd;
+
     }
 
 
     .team-card {
-    flex-basis: calc((100% - 72px) / 2);
+        flex-basis: calc((100% - 72px) / 2);
 
-}
+    }
 
-.team-list {
-display: grid;
-grid-template-columns: repeat(2,1fr);
-}
+
+    .team {
+        background-color: #f4f4fd;
+        padding: 0;
+    }
+
+    .team-list {
+        display: flex;
+        gap: 24px;
+    }
+
+    .team-item {
+        width: calc((100% - 72px) / 2);
+        background: #fff;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+            0 1px 1px 0 rgba(46, 47, 66, 0.16),
+            0 1px 6px 0 rgba(46, 47, 66, 0.08);
+
+    }
+
+
+
+
+    .team-name {
+        color: #2e2f42;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        margin-bottom: 72px;
+        text-align: center;
+        margin-bottom: 8px;
+
+
+    }
+
+    .team-role {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #434455;
+        letter-spacing: 0.02em;
+        margin: 0;
+        text-align: center;
+        margin-bottom: 8px;
+    }
 }
 
 @media screen and (min-width: 1158px) {
@@ -818,7 +877,7 @@ grid-template-columns: repeat(2,1fr);
 
     .team {
         background-color: #f4f4fd;
-        padding: 120px 0;
+        padding:  0;
     }
 
     .team-list {
@@ -877,8 +936,6 @@ grid-template-columns: repeat(2,1fr);
 .socials-item {
     width: 40px;
     height: 40px;
-padding-bottom: 32px;
-padding-top: 8px;
     }
 
 .socials-link {
@@ -1005,8 +1062,8 @@ font-weight: 700;
      border: 1px solid #e7e9fc;
      border-top: none;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     flex-direction: column;
     text-align: left;
  }
@@ -1019,6 +1076,7 @@ font-weight: 700;
      letter-spacing: 0.02em;
      margin-bottom: 8px;
      text-align: left;
+     justify-content: left;
 
  }
 .project-text {
@@ -1029,6 +1087,7 @@ font-weight: 700;
     letter-spacing: 0.02em;
     margin: 0;
     text-align: left;
+    justify-content: left;
 }
 
 
@@ -1059,15 +1118,25 @@ font-weight: 700;
  }
 
 .project-list {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
 gap: 72px 24px;
 
 }
 
 .project-overlay-text {
-    display: none;
-   
+
+color: #f4f4fd;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 40px 32px;
+    position: absolute;
+    background-color: #4d5ae5;
+    height: 100%;
+    width: 100%;
+    letter-spacing: 0.02em;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 0;
+    transform: translateY(100%)
+}
 }
 .project-card:hover .project-overlay-text {
     transform: translateY(0);
@@ -1201,7 +1270,7 @@ color: inherit;
             flex-wrap: wrap;
         row-gap: 72px;
            margin: 0 auto;
-            column-gap: 100px;
+            column-gap: 120px;
         }
 
           .footer-left {
@@ -1246,7 +1315,7 @@ margin-bottom: 16px;
     flex-direction: flex;
 padding: 0 108px;
 row-gap: 24px;
-column-gap: 100px;
+column-gap: 120px;
 }
 
 .footer-left {
@@ -1282,10 +1351,7 @@ column-gap: 100px;
         padding: 0 15px;
     }
 
-    .footer-left {
-        margin-right: 120px;
-      
-    }
+
 
     .footer-logo {
         letter-spacing: 0.03m;
@@ -1318,9 +1384,18 @@ column-gap: 100px;
 
 /* ===F=ooter socials ===*/
 
+.footer-logo {
+display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0px;
+        justify-content: center;
+
+}
 .footer-socials {
         text-align: wrap;
-        margin-right: auto;
+    align-items: center;
+        justify-content: center;
     }
 
         .footer-socials-title {
@@ -1331,14 +1406,14 @@ column-gap: 100px;
             letter-spacing: 0.02em;
             font-weight: 500;
             margin: 0 0 16px 0;
-    
+            align-items: center;
+            justify-content: center; 
+        text-align: center;
         }
 
          .footer-socials-list {
              display: flex;
-            width: 208px;
-                height: 40px;
-                padding: 112px 40px 72px 40px;
+           
 
     
          }
@@ -1423,6 +1498,13 @@ opacity: 0.3;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     line-height: 1.5;
     text-align: center;
+    margin-top: 32px;
+
+}
+.footer-visually {
+
+    margin-top: 32px;
+    margin-bottom: 32px;
 
 }
 .icon-send {
@@ -1440,14 +1522,11 @@ opacity: 0.3;
 }
 .footer-socials-list {
     display: flex;
-    margin: 16px;
-    display: flex;
         align-items: flex-start;
         justify-content: flex-start;
         flex-direction: row;
         gap: 16px;
-        width: 208px;
-            height: 40px;
+    
    
 
 }
@@ -1626,7 +1705,7 @@ width: 264px;
         cursor: pointer;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         line-height: 1.5;
-        margin-top: 16px;
+       
 
     }
 
