@@ -1094,7 +1094,7 @@ font-weight: 700;
 
 @media screen and (min-width: 768px) {
 .project-card {
-  flex-basis: calc((100% - 48px) / 3);  
+  flex-basis: calc((100% - 48px) / 2);  
 }
  .project-title {
      color: #2e2f42;
@@ -1147,7 +1147,7 @@ color: #f4f4fd;
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 2px 1px rgba(46, 47, 66, 0.08);
 }
-}
+
 
 
 
@@ -1270,7 +1270,8 @@ color: inherit;
             flex-wrap: wrap;
         row-gap: 72px;
            margin: 0 auto;
-            column-gap: 120px;
+            column-gap: 24px;
+            margin-right: 100px;
         }
 
           .footer-left {
@@ -1310,18 +1311,33 @@ margin-bottom: 16px;
 
 
 @media screen and (min-width: 768px) {
+
+    .page-footer {
+            background-color: #2e2f42;
+            padding: 100px 0;
+            color: #f4f4fd;
+        }
+
 .footer-container {
-    flex-wrap: wrap;
-    flex-direction: flex;
+   display: flex;
+   justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
 padding: 0 108px;
 row-gap: 24px;
-column-gap: 120px;
+column-gap: 24px;
+}
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+
 }
 
-.footer-left {
-    margin-right: 120px;
-}
+
 .footer-logo {
+    display: inline-block;
     letter-spacing: 0.03m;
     margin-bottom: 16px;
     color: #4D5AE5;
@@ -1330,11 +1346,17 @@ column-gap: 120px;
     line-height: 1.17;
     font-weight: 700;
     font-size: 18px;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
     margin-bottom: 16px;
 }
+
+ .footer-text {
+     color: #f4f4fd;
+     font-size: 16px;
+     line-height: 1.5;
+     letter-spacing: 0.02em;
+     margin: 0;
+
+ }
 }
 
 @media screen and (min-width: 1158px) {
@@ -1346,14 +1368,23 @@ column-gap: 120px;
 
     .footer-container {
         display: flex;
-        flex-direction: flex;
-        align-items: baseline;
+       align-items: flex-start;
         padding: 0 15px;
-    }
+        row-gap: 24px;
+        column-gap: 24px;
+            }
+    
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 
+}
 
 
     .footer-logo {
+        display: inline-block;
         letter-spacing: 0.03m;
         margin-bottom: 16px;
         display: inline-block;
@@ -1364,6 +1395,7 @@ column-gap: 120px;
         font-weight: 700;
         font-size: 18px;
         margin-bottom: 16px;
+       
     }
 
     .footer-logo .logo-part {
@@ -1376,22 +1408,13 @@ column-gap: 120px;
         line-height: 1.5;
         letter-spacing: 0.02em;
         margin: 0;
-     
-
+    
     }
 
 }
 
 /* ===F=ooter socials ===*/
 
-.footer-logo {
-display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 0px;
-        justify-content: center;
-
-}
 .footer-socials {
         text-align: wrap;
     align-items: center;
@@ -1439,7 +1462,8 @@ display: flex;
 }
 
 .form-container-text {
-    margin-bottom: 72px;
+    margin-bottom: 16px;
+    margin-top: 72px;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
@@ -1498,6 +1522,8 @@ opacity: 0.3;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     line-height: 1.5;
     text-align: center;
+    gap: 16p;
+    margin-left: 24px;
     margin-top: 32px;
 
 }
@@ -1517,8 +1543,17 @@ opacity: 0.3;
 @media screen and (min-width: 768px) {
 
 .footer-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
         text-align: left;
         flex-direction: flex;
+}
+
+.footer-socials-title {
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 16px;
 }
 .footer-socials-list {
     display: flex;
@@ -1641,14 +1676,13 @@ width: 264px;
 
 }
     .form-container-text {
-        margin-bottom: 16px;
+        margin-top: 0;
         font-weight: 500;
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: #ffffff;
         text-align: left;
-        margin-bottom: 16px;
     }
 
     .container-form-container {
@@ -1657,6 +1691,7 @@ width: 264px;
         width: 264px;
         height: 40px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+
     }
 
     .footer-form {
